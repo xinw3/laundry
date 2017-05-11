@@ -95,10 +95,11 @@ export default class AccountScene extends Component {
   }
 
   render() {
-    // console.log('AccountScene', this.props);
+    console.log('AccountScene', this.props);
     const { navigator } = this.props;
-    const { username, email, password, address, city, property_name } = this.props;
+    const { username, email, password, address, city, property_name, access_code } = this.props;
     const { old_password, new_password, confirm_password, new_address, new_city } = this.state;
+    console.log("access_code", access_code);
 
     return (
       <View style={styles.container}>
@@ -125,6 +126,18 @@ export default class AccountScene extends Component {
                   onChangeText={ (email) => {this.setState({email})}}
                   placeholder={ email }
                   value={ email }
+                  autoCapitalize='none'
+                  editable={false}
+                  placeholderTextColor='rgba(51,51,51,0.5)'
+                  autoCorrect={false} />
+              </View>
+
+              <View style={styles.input}>
+                <Text style={styles.label}>Access Code</Text>
+                <TextInput
+                  style={styles.textInput}
+                  placeholder={ access_code.toString() }
+                  value={ access_code.toString() }
                   autoCapitalize='none'
                   editable={false}
                   placeholderTextColor='rgba(51,51,51,0.5)'

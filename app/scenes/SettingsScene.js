@@ -111,6 +111,7 @@ var SettingsScene = React.createClass({
             address: this.props.address,
             city: this.props.city,
             property_name: this.props.property_name,
+            access_code: this.props.access_code,
             title: rowData}
         });
         break;
