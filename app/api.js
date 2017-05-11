@@ -1,5 +1,5 @@
 
-const server = 'http://128.237.128.209:3000/';
+const server = 'http://ec2-34-201-14-244.compute-1.amazonaws.com:3000';
 
 const API_URL = {
     'signUp': server + 'api/add_user/',
