@@ -23,6 +23,7 @@ import MainScene from './MainScene';
 export default class LoginScene extends Component {
   constructor(props) {
     super(props);
+    console.log("login", this.props);
 
     this.state = {
       username: '',

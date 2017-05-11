@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm.S \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Profiler/RCTMacros.h
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm.S \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Profiler/RCTMacros.h

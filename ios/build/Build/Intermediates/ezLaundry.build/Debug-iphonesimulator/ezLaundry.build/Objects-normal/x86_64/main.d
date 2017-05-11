@@ -1,3 +1,2 @@
-dependencies: \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/ezLaundry/main.m \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/ezLaundry/AppDelegate.h
+dependencies: /Users/xinwang/Desktop/frontend/ios/ezLaundry/main.m \
+  /Users/xinwang/Desktop/frontend/ios/ezLaundry/AppDelegate.h

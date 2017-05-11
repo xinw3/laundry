@@ -18,7 +18,8 @@ var CountDown = React.createClass ({
     return {
       time: this.props.time,
       end_time: this.props.end_time,
-      username: this.props.username
+      username: this.props.username,
+      displayTime: '9999',
     };
   },
 
@@ -49,16 +50,18 @@ var CountDown = React.createClass ({
       // var displayTime = moment(time,"mmss").format('mmss');
       //
       const now = moment(new Date()).tz("America/New_York");
+      // console.log(moment(now).isBefore(this.state.end_time));
       //
       // this.setState({time: time});
 
-      if ( !moment(now).isAfter(this.state.end_time) ) {
+      if ( moment(now).isBefore(this.state.end_time) && this.state.displayTime != '0001') {
         // var time = this.state.time - 1;
         var time = moment(this.state.time, "mmss").subtract('1', 'seconds');
 
         var displayTime = moment(time,"mmss").format('mmss');
 
         this.setState({time: time});
+        this.setState({displayTime: displayTime});
 
         this.setTimeout(timer, 1000);
 
@@ -68,6 +71,7 @@ var CountDown = React.createClass ({
         var time = '0000';
 
         var displayTime = moment(time,"mmss").format('mmss');
+        this.setState({displayTime: displayTime});
 
         // this.setState({time: this.props.time});
         this.setState({time: '0000'});

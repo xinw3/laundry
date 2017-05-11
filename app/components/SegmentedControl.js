@@ -42,7 +42,12 @@ var SegmentedControl = React.createClass({
     this.fetchData();
     // Fetch data every 10 sec
     // this.timer = setInterval(() => this.fetchData(), 60000);
-    this.timer = setInterval(() => this.fetchData(), 5000);
+    this.timer = setInterval(() => this.fetchData(), 1000);
+    // <View>
+    // <ScrollView style={styles.listContainer}>
+    //   {this.renderListView()}
+    // </ScrollView>
+    // </View>
   },
 
   fetchData: async function() {
@@ -132,7 +137,7 @@ var SegmentedControl = React.createClass({
     var res = await API.quickReserve(this.state.username, machine_id);
     if (res.message && res.message.toUpperCase() === 'SUCCESS') {
       // Update the DS state - fetch the data again
-      console.log("quick reserve success feftch data");
+      // console.log("quick reserve success feftch data");
       this.fetchData();
     } else {
       // Do nothing
@@ -141,10 +146,10 @@ var SegmentedControl = React.createClass({
   },
 
   handleCountDown: function(newRemainTime, end_time, username) {
-    console.log("handleCountDown:\t" + end_time);
+    // console.log("handleCountDown:\t" + end_time);
     const now = moment(new Date()).tz("America/New_York");
     if ( moment(now).isAfter(end_time) ) {
-      console.log("handleCountDown:\t timeout!");
+      // console.log("handleCountDown:\t timeout!");
 
       if (username === this.state.username) {
         Alert.alert("Your reservation just expired!");
@@ -162,18 +167,24 @@ var SegmentedControl = React.createClass({
 
     var raw_remainTime;
 
-    if (rowData.end_time != null) {
+    var test = JSON.stringify(rowData);
+
+    // console.log(raw_remainTime);
+
+    if (rowData.end_time) {
       // Convert the end time to readable format
-      var end_time = moment(rowData.end_time).tz("America/New_York").format('hh:mm A');
+      var end_time = moment(rowData.end_time).tz("America/New_York").subtract(1, 'hours').format('hh:mm A');
+      // console.log(`end_time: ${end_time}`);
       // Calculate the remain time in mmss
       raw_remainTime = moment(rowData.end_time).tz("America/New_York") - moment().tz("America/New_York");
       var remainTime = moment(raw_remainTime).format('mmss');
     } else {
       raw_remainTime = 0;
     }
+    var displayTime = raw_remainTime;
 
-
-    if (raw_remainTime > 0) {
+    // console.log(`raw_remainTime: ${raw_remainTime}`);
+    if (displayTime > 0) {
       return (
           <View style={styles.container}>
             <View style={styles.rowContainer}>
@@ -186,6 +197,7 @@ var SegmentedControl = React.createClass({
                   time = {remainTime}
                   end_time = {rowData.end_time}
                   username = {rowData.username}
+                  displayTime = {rowData.displayTime}
                   onCountDown = {
                     remainTime = this.handleCountDown
                   }/>

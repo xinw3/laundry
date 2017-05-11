@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Views/RCTMapAnnotation.m \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Views/RCTMapAnnotation.h
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Views/RCTMapAnnotation.m \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Views/RCTMapAnnotation.h

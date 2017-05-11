@@ -1,12 +1,11 @@
-dependencies: \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/ezLaundry/AppDelegate.m \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/ezLaundry/AppDelegate.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h
+dependencies: /Users/xinwang/Desktop/frontend/ios/ezLaundry/AppDelegate.m \
+  /Users/xinwang/Desktop/frontend/ios/ezLaundry/AppDelegate.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h

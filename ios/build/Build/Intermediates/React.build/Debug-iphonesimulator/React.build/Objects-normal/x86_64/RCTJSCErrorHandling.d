@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Executors/RCTJSCErrorHandling.mm \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Executors/RCTJSCErrorHandling.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/vitachen/Documents/SP2017/laundry/laundry/node_modules/react-native/React/Base/RCTJSStackFrame.h
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Executors/RCTJSCErrorHandling.mm \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Executors/RCTJSCErrorHandling.h \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/xinwang/Desktop/frontend/node_modules/react-native/React/Base/RCTJSStackFrame.h
