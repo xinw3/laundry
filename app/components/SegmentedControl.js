@@ -106,46 +106,44 @@ var SegmentedControl = React.createClass({
     )
   },
 
-  // renderReserveScene: function() {
-  //   return (
-  //     <Navigator
-  //       style={styles.container}
-  //       initialRoute={{type: 'Washing'}}
-  //       renderScene={(route, navigator) =>
-  //         <ReserveScene {...this.props}/>
-  //       }
-  //       configureScene={(route, routeStack) =>
-  //         Navigator.SceneConfigs.PushFromRight}
-  //     />
-  //   );
-  // },
-
   quickReserveConfirm: async function(machine_id) {
-    const fake_access_code = '1001';
-    // Raise another alert to confirm
-    Alert.alert(
-      'Reservation Code: ' + fake_access_code,  // to be changed
-      'You have reserved this machine successfully. Please note that this reservation will expire in 5 minutes.',
-
-      [
-        { text: 'OK', onPress: (id) => {
-          var id = machine_id;
-          this.quickReserveSuccess(id)} }
-      ]
-    );
+    // const fake_access_code = '1001';
+    console.log('Now in quickReserveConfirm');
+    this.quickReserveSuccess(machine_id, function(res) {
+      console.log("quickReserveConfirm", JSON.stringify(res));
+      if (!res) {
+        console.log("quickReserveConfirm", 'NULL');
+        return;
+      }
+      // Raise another alert to confirm
+      Alert.alert(
+        'Reservation Code: ' + res,  // to be changed
+        'You have reserved this machine successfully. Please note that this reservation will expire in 5 minutes.',
+        [
+          { text: 'OK' }
+        ]
+      );
+    });
   },
 
-  quickReserveSuccess: async function(machine_id) {
+  quickReserveSuccess: function(machine_id, callback) {
     // Call API to reserve this machine_id
-    var res = await API.quickReserve(this.state.username, machine_id);
-    if (res.message && res.message.toUpperCase() === 'SUCCESS') {
-      // Update the DS state - fetch the data again
-      // console.log("quick reserve success feftch data");
-      this.fetchData();
-    } else {
-      // Do nothing
-      Alert.alert(res.message);
-    }
+    console.log('Now in quickReserveSuccess');
+    API.quickReserve(this.state.username, machine_id).then(function(res) {
+      console.log("quickReserveSuccess", res.access_code);
+      if (res.message && res.message.toUpperCase() === 'SUCCESS') {
+        // Update the DS state - fetch the data again
+        console.log("quick reserve success feftch data");
+        var access_code = res.access_code;
+        // this.fetchData();
+        console.log("access_code", access_code);
+        return callback(access_code);
+      } else {
+        // Do nothing
+        Alert.alert(res.message);
+        return callback(null);
+      }
+    });
   },
 
   handleCountDown: function(newRemainTime, end_time, username) {
