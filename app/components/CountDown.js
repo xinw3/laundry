@@ -6,8 +6,10 @@ import {
     StyleSheet,
     TextInput,
     AppRegistry,
+    AppState,
+    Alert,
     TouchableHighlight,
-    TouchableWithoutFeedback
+    TouchableWithoutFeedback,
 } from 'react-native';
 import TimerMixin from 'react-timer-mixin';
 import moment from 'moment';
@@ -18,8 +20,7 @@ var CountDown = React.createClass ({
     return {
       time: this.props.time,
       end_time: this.props.end_time,
-      username: this.props.username,
-      displayTime: '9999',
+      username: this.props.username
     };
   },
 
@@ -28,6 +29,7 @@ var CountDown = React.createClass ({
   },
 
   render(){
+    console.log("CountDown");
     var style = [styles.text];
     var component;
     component =
@@ -41,6 +43,10 @@ var CountDown = React.createClass ({
         component
     )
   },
+  _onLocalNotification() {
+    Alert.alert(
+    'Your laundry is done',
+  )},
 
   _countdown(){
     var timer = function () {
@@ -50,39 +56,29 @@ var CountDown = React.createClass ({
       // var displayTime = moment(time,"mmss").format('mmss');
       //
       const now = moment(new Date()).tz("America/New_York");
-      // console.log(moment(now).isBefore(this.state.end_time));
       //
       // this.setState({time: time});
 
-      if ( moment(now).isBefore(this.state.end_time) && this.state.displayTime != '0001') {
+      if ( moment(now).isBefore(this.state.end_time) && this.state.displayTime != '0001' ) {
         // var time = this.state.time - 1;
         var time = moment(this.state.time, "mmss").subtract('1', 'seconds');
-
         var displayTime = moment(time,"mmss").format('mmss');
-
         this.setState({time: time});
-        this.setState({displayTime: displayTime});
-
         this.setTimeout(timer, 1000);
-
         this.props.onCountDown(displayTime, this.state.end_time, this.state.username);
       } else {
         // var time = this.state.time - 1;
         var time = '0000';
-
         var displayTime = moment(time,"mmss").format('mmss');
-        this.setState({displayTime: displayTime});
-
         // this.setState({time: this.props.time});
         this.setState({time: '0000'});
-
         this.props.onCountDown(displayTime, this.state.end_time, this.state.username);
       }
-
     };
     this.setTimeout(timer.bind(this), 1000);
   }
 });
+
 
 var styles = StyleSheet.create({
   container: {

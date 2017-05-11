@@ -1,3 +1,4 @@
+
 const server = 'http://128.237.128.209:3000/';
 
 const API_URL = {
@@ -73,7 +74,7 @@ const API = {
         })
       })
       let json = await response.json();
-      console.log(json);
+      // console.log(json);
       return json;
     } catch(err) {
       console.log(err);
@@ -103,9 +104,9 @@ const API = {
   getMachineData: async function(username, machine_type) {
     // original
 
-    // console.log(API_URL.getMachineData);
+    console.log(API_URL.getMachineData);
     // console.log(username);
-    // console.log(machine_type);
+    console.log(machine_type);
     try{
       let response = await fetch(`${API_URL.getMachineData}`, {
         method: 'POST',
@@ -118,7 +119,7 @@ const API = {
         })
       })
       let json = await response.json();
-      // console.log(json.schedules);
+      console.log(json.schedules);
       return json.schedules;
     } catch(err) {
       console.log(err);
@@ -151,7 +152,7 @@ const API = {
         })
       })
       let json = await response.json();
-      // console.log("in quickReserve api", json);
+      console.log("in quickReserve api", json);
       return json;
     } catch(err) {
       console.log(err);
@@ -162,7 +163,7 @@ const API = {
   },
   updateUser: async function(username, new_password, address, city) {
     try{
-      // console.log("new_password", new_password);
+      console.log("new_password", new_password);
       let response = await fetch(`${API_URL.updateUser}`, {
         method: 'POST',
         headers: {
@@ -183,8 +184,8 @@ const API = {
     }
   },
   report: async function(username, report) {
-    // console.log('report API', report);
-    // console.log('username', username);
+    console.log('report API', report);
+    console.log('username', username);
     try{
       let response = await fetch(`${API_URL.report}`, {
         method: 'POST',
@@ -197,7 +198,7 @@ const API = {
         })
       })
       let json = await response.json();
-      // console.log(json);
+      console.log(json);
         return json;
     } catch(err) {
       console.log(err);
@@ -217,7 +218,7 @@ const API = {
         })
       })
       let json = await response.json();
-      // console.log(json);
+      console.log(json);
         return json;
     } catch(err) {
       console.log(err);
@@ -238,7 +239,7 @@ const API = {
         })
       })
       let json = await response.json();
-      // console.log(json);
+      console.log(json);
         return json;
     } catch(err) {
       console.log(err);
@@ -247,7 +248,7 @@ const API = {
 
   getAllResSchedule: async function(username, machine_type, date) {
     // username not required?
-    // console.log('getAllResSchedule');
+    console.log('getAllResSchedule');
     // try {
     //   let response = await fetch(`${API_URL.getAllResSchedule}`, {
     //     method: 'POST',
@@ -268,7 +269,7 @@ const API = {
     // }
 
       // change
-      // console.log("API: getAllResSchedule");
+      console.log("API: getAllResSchedule");
       // res_time: the start time all the machines are not available, date object
       let json = [
                    {'username': 'v', 'res_time': new Date("October 13, 2014 10:30:00")},
@@ -283,7 +284,7 @@ const API = {
   },
 
   getResSchedule: async function(username, machine_type, date) {
-    // console.log('getResSchedule');
+    console.log('getResSchedule');
     // try {
     //   let response = await fetch(`${API_URL.getResSchedule}`, {
     //     method: 'POST',
@@ -304,7 +305,7 @@ const API = {
     // }
 
       // change
-      // console.log("API: getResSchedule");
+      console.log("API: getResSchedule");
       // res_time: the start time all the machines are not available, date object
       // TODO: need to get a reserve_time.
       // NOTE: test your reservation

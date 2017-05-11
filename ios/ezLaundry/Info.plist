@@ -13,7 +13,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+<<<<<<< HEAD
 	<string>ezLaundry</string>
+=======
+	<string>$(PRODUCT_NAME)</string>
+>>>>>>> origin/master
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,8 +30,11 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+<<<<<<< HEAD
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+=======
+>>>>>>> origin/master
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>localhost</key>

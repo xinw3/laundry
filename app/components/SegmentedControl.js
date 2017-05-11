@@ -22,6 +22,7 @@ import moment from 'moment-timezone';
 import ReserveScene from '../scenes/ReserveScene';
 
 
+
 var SegmentedControl = React.createClass({
 
   getInitialState: function() {
@@ -48,6 +49,7 @@ var SegmentedControl = React.createClass({
     //   {this.renderListView()}
     // </ScrollView>
     // </View>
+
   },
 
   fetchData: async function() {
@@ -124,6 +126,7 @@ var SegmentedControl = React.createClass({
     Alert.alert(
       'Reservation Code: ' + fake_access_code,  // to be changed
       'You have reserved this machine successfully. Please note that this reservation will expire in 5 minutes.',
+
       [
         { text: 'OK', onPress: (id) => {
           var id = machine_id;

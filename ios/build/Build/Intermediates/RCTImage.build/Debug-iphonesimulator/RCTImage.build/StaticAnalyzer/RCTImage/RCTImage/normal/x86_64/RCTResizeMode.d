@@ -1,14 +1,14 @@
 dependencies: \
-  /Users/xinwang/Desktop/frontend/node_modules/react-native/Libraries/Image/RCTResizeMode.m \
-  /Users/xinwang/Desktop/frontend/node_modules/react-native/Libraries/Image/RCTResizeMode.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
-  /Users/xinwang/Desktop/frontend/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h
+  /Users/xinwang/Desktop/ezLaundry/node_modules/react-native/Libraries/Image/RCTResizeMode.m \
+  /Users/xinwang/Desktop/ezLaundry/node_modules/react-native/Libraries/Image/RCTResizeMode.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/xinwang/Desktop/ezLaundry/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h

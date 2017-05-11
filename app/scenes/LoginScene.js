@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  Alert
+  Alert,
+  TouchableOpacity
 } from 'react-native';
 
 import Button from 'apsl-react-native-button';
@@ -19,16 +20,18 @@ import store from '../store';
 
 import Navbar from '../components/Navbar';
 import MainScene from './MainScene';
+import ResetPasswordScene from './ResetPasswordScene';
 
 export default class LoginScene extends Component {
   constructor(props) {
     super(props);
-    console.log("login", this.props);
 
     this.state = {
-      username: '',
-      password: '',
+      username: this.props.username,
+      email: '',
+      password: this.props.password,
       address: '',
+      city: '',
       property_name: ''
     }
   }
@@ -43,33 +46,66 @@ export default class LoginScene extends Component {
     }
 
     try {
+      // original
       const res = await API.login(username, password);
+
+      // NOTE: changed
+      // const res = {"message": "SUCCESS",
+      //              "user": {"username": "v",
+      //                       "email": "v@gmail.com",
+      //                       "password": "v",
+      //                       "property_name": "Forbes",
+      //                       "city": 'Pittsburgh',
+      //                       "address": "forbes",
+      //                      },
+      //             };
+      // end change
+
 
       if (res.message && res.message.toUpperCase() === "SUCCESS") {
         // Store the user data
         let user = res.user;
+        // console.log(res.user);
         store.setUsername(user.username);
         store.setPassword(user.password);
         store.setPropertyName(user.property_name);
 
         this.setState({
           username: user.username,
+          email: user.email,
           password: user.password,
           address: user.address,
-          property_name: user.property_name
+          city: user.city,
+          property_name: user.property_name,
         })
 
         // Navigate to the main scene
         navigator.push({
           name: 'Status',
           title: user.property_name,
-          passProps: this.state,
-          component: MainScene
+          component: MainScene,
+          passProps: {
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            address: user.address,
+            city: user.city,
+            property_name: user.property_name,
+            bottomTab: 'Status',
+          }
         })
         return;
       // Alert error messageå
       } else {
-        Alert.alert(res.message);
+        console.log('login', res.message);
+        Alert.alert(
+          res.message,
+          '',
+          [
+            {text: 'Confirm', onPress: () => {
+              this.resendEmail(username)} },
+            {text: 'Cancel'},
+          ]);
         return;
       }
     } catch(err) {
@@ -77,6 +113,40 @@ export default class LoginScene extends Component {
     }
   }
 
+  async resendEmail(username) {
+    console.log('resendEmail');
+    try {
+      let res = await API.resendEmail(username);
+      console.log(res);
+      if (res.message && res.message.toUpperCase() === "SUCCESS") {
+        console.log(res);
+        return;
+      // Alert error message
+      } else {
+        Alert.alert(res.message);
+        return;
+      }
+      return;
+    } catch(err) {
+      console.log(err);
+    }
+  }
+
+  forgotPassword () {
+    const { navigator } = this.props;
+    const { username, email } = this.state;
+
+    navigator.push ({
+      component: ResetPasswordScene,
+      passProps: {
+        username: '',
+        email: '',
+        password: '',
+        address: '',
+        city: '',
+        property_name: '',}
+    });
+  }
   render() {
     const { navigator } = this.props;
     const { username, password } = this.state;
@@ -84,9 +154,7 @@ export default class LoginScene extends Component {
     return (
       <View style={styles.container}>
         <Navbar title='Login' leftBtn='Back' navigator={navigator} />
-
         <View style={styles.container}>
-
           <View style={styles.bgWrapper}>
             <Image source={require('../img/bg.png')} style={styles.bg} />
           </View>
@@ -99,29 +167,41 @@ export default class LoginScene extends Component {
                 placeholder='username'
                 autoCapitalize='none'
                 placeholderTextColor='rgba(51,51,51,0.5)'
+                sectionColor='#4AC3C0'
                 autoCorrect={false}
                 value={username} />
-
               <TextInput
                 style={styles.textInput}
                 onChangeText={ (password) => {this.setState({password})}}
                 placeholder='password'
                 autoCapitalize='none'
+                sectionColor='#4AC3C0'
                 secureTextEntry
                 placeholderTextColor='rgba(51,51,51,0.5)'
                 autoCorrect={false}
                 value={password} />
+
+              <TouchableOpacity
+                onPress={() => Alert.alert(
+                  'Forgot your password?',
+                  'An email will be sent to your registered email address for password resetting',
+                  [
+                    {text: 'Reset Password', onPress: () => {
+                      this.forgotPassword()} },
+                    {text: 'Cancel'},
+                  ]
+                )}>
+                <Text style={styles.forget}>forgot password?</Text>
+              </TouchableOpacity>
             </View>
-
-              <Button style={styles.btn}
-                      textStyle={{fontSize: 18, color: 'white', fontWeight: 'bold'}}
-                      onPress={this.loginAction.bind(this)}>
-                Login
-              </Button>
+            <Button style={styles.btn}
+                    textStyle={{fontSize: 18, color: 'white', fontWeight: 'bold'}}
+                    onPress={this.loginAction.bind(this)}>
+              Login
+            </Button>
           </View>
-
         </View>
-      </View> // include navbar
+      </View>
     );
   }
 }
@@ -143,13 +223,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFADAD',
     alignSelf: 'center',
     borderWidth: 0,
-    margin: 15,
+    margin: 30,
     width: 300
   },
 
   text: {
     color: '#929292',
     alignSelf: 'center'
+  },
+  forget: {
+    alignSelf: 'center',
+    marginTop: 10,
+    textDecorationLine: 'underline',
   },
 
   textInput: {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.ezezLaundry;
+=======
+package com.ezlaundry;
+>>>>>>> origin/master
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +14,10 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
+<<<<<<< HEAD
         return "ezezLaundry";
+=======
+        return "ezLaundry";
+>>>>>>> origin/master
     }
 }

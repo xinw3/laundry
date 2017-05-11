@@ -30,10 +30,32 @@ let store = {
     return res;
   },
 
+  async setAddress(address) {
+    await AsyncStorage.setItem('address', address);
+  },
+  async getAddress(address) {
+    let res = await AsyncStorage.getItem('address');
+    return res;
+  },
+
   async removeUser() {
     let keys = ['username', 'password', 'address', 'property_name'];
     await AsyncStorage.multiRemove(keys);
-  }
+  },
+
+
+  async setRemindDone(boolean) {
+    try {
+      await AsyncStorage.setItem('remindDone', JSON.stringify(boolean));
+    } catch(error) {
+      console.log(error);
+    }
+  },
+  async getRemindDone() {
+    let res = await AsyncStorage.getItem('remindDone');
+    console.log("value got: " + res);
+    return Boolean(res);
+  },
 
 }
 

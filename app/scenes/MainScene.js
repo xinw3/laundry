@@ -1,3 +1,4 @@
+
 'use strict';
 
 var React = require('react');
@@ -6,8 +7,8 @@ var { StyleSheet, TabBarIOS, Text, View } = ReactNative;
 
 import Navbar from '../components/Navbar';
 import StatusScene from './StatusScene';
-import ReserveScene from './ReserveScene';
 import SettingsScene from './SettingsScene';
+import ReserveScene from './ReserveScene';
 
 
 var statusIcon =
